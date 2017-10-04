@@ -1,0 +1,85 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; } 
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; } 
+h1, h2, h3, h4, h5, h6{ font-size:100%; } 
+address, cite, dfn, em, var { font-style:normal; } 
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; } 
+small{ font-size:12px; } 
+ul, ol { list-style:none; } 
+a { text-decoration:none; } 
+a:hover { text-decoration:underline; } 
+sup { vertical-align:text-top; } 
+sub{ vertical-align:text-bottom; } 
+legend { color:#000; } 
+fieldset, img { border:0; } 
+button, input, select, textarea { font-size:100%; } 
+table { border-collapse:collapse; border-spacing:0; }
+
+/* idnex页面样式 */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search{
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    margin-top: -170px;
+}
+.title h1{
+    text-align: center;
+    font-size: 3.5rem;
+}
+.search .row form{
+    height: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.search .row form button{
+    height: 100%;
+    flex-grow: 1;
+    border-radius: 0;
+}
+.search .row form .form-group{
+    flex-grow: 10;
+}
+.search .row form input{
+    height: 50px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 0;
+}
+.info{
+    padding: 20px;
+}
+.user{
+    margin-top: 20px;
+}
+.user .input-group{
+    margin: 10px 0;
+}
+.user .input-group input{
+    width: 300px;
+    max-width: 300px;
+}
+.user .input-group label input{
+    width: 13px;
+}
+.user .input-group label{
+    margin-left: 20px;
+}
+.page{
+    margin-top: 20px;
+}
+.page .row div img{
+    width: 100%;
+}
+.page .row div{
+    margin: 10px 0;
+}

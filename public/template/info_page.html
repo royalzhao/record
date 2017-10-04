@@ -1,0 +1,12 @@
+<div class="page">
+    <ul class="row">
+        <li ng-repeat="image in images" class="col-lg-3 col-md-3 col-sm-4 col-sm-2">
+            <div>
+                <a ng-click="openLightboxModal($index)">
+                    <img ng-src="{{image.thumbUrl}}" class="img-thumbnail">
+                </a>
+            </div>
+        </li>
+        
+    </ul>
+</div>
