@@ -7,4 +7,11 @@
     <div ui-view>
         
     </div>
+    <div ng-switch="isZero(num)">
+        <div ng-switch-when = "true" class="tishi">
+            <p>
+                页面无任何操作，将在<span>{{time3}}</span>秒后返回首页。
+            </p>
+        </div>
+    </div>
 </div>

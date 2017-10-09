@@ -1,4 +1,4 @@
-var app = angular.module('app',['ui.router','ng-layer','ui.bootstrap','bootstrapLightbox']);
+var app = angular.module('app',['ui.router','ui.bootstrap','bootstrapLightbox']);
 
 app.config(function($stateProvider,$urlRouterProvider){
     $urlRouterProvider.otherwise('/index');
@@ -10,12 +10,13 @@ app.config(function($stateProvider,$urlRouterProvider){
         })
         .state('info',{
             url:'/info',
-            templateUrl:'template/info.html'
+            templateUrl:'template/info.html',
+            controller:'infoController'
         })
         .state('info.user',{
             url:'/user',
             templateUrl:'template/info_user.html',
-            controller:'infoController'
+            controller:'userController'
         })
         .state('info.page',{
             url:'/page',
@@ -47,8 +48,6 @@ app.controller('appController',function ($scope, $uibModal, $log){
             $log.info('Modal dismissed at: ' + new Date());
         });
     };
-
-
 })
 app.controller('ModalInstanceCtrl', function ($uibModalInstance, userId,$state) {
     
@@ -62,6 +61,38 @@ app.controller('ModalInstanceCtrl', function ($uibModalInstance, userId,$state) 
         $uibModalInstance.dismiss('cancel');
     };
 
+});
+app.controller('infoController', function ($scope,$interval,$timeout,$state) {
+
+    var lastTime = new Date();
+    var time = 10000;
+    $scope.time3 = 30;
+    function operate(){
+        var thisOperaTime = lastTime = new Date();
+        $timeout(function(){
+            if(thisOperaTime === lastTime){
+                $scope.isZero = function(num){
+                    return true;
+                }
+                var time2 = $timeout(function(){
+                     $state.go('index')
+                },30000)
+                $scope.time3 =30
+                $interval(function(){
+                    $scope.time3--
+                },1000)
+            }else{
+                $scope.isZero = function(num){
+                    return false;
+                }
+            }
+        },time)
+    }
+    operate();
+    document.onmousedown = operate;
+    document.onkeypress = operate;
+    document.onscroll = operate;
+ 
 });
 app.controller('pageController', function ($scope, Lightbox) {
     $scope.images = [
